@@ -1,0 +1,18 @@
+{
+  "name": "mystarter",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite --open",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "postcss": "^8.5.4",
+    "postcss-media-minmax": "^5.0.0",
+    "postcss-pxtorem": "^6.1.0",
+    "sass": "^1.89.1",
+    "vite": "^6.3.5"
+  }
+}

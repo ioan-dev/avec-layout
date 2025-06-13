@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        [data-js-accordion-content] {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: #f9f9f9;
+            padding: 0 1rem;
+        }
+
+        [data-js-accordion-content].is-active {
+            max-height: 500px; /* Подберите значение или рассчитывайте динамически */
+            transition: max-height 0.3s ease-in;
+        }
+
+        [data-js-accordion-trigger] {
+            width: 100%;
+            text-align: left;
+            padding: 1rem;
+            background: #eee;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        [data-js-accordion-trigger].is-active {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+<!--HEADER-->
+<header class="header" data-js-header>
+    <div class="header__inner container">
+        <!--Header logo-->
+        <a href="/" class="header__logo logo" aria-label="Home">
+            <img src="/" alt="" class="logo__image" width="100" height="100">
+        </a>
+        <div class="header__overlay" data-js-header-overlay>
+            <!--Header menu-->
+            <nav class="header__menu">
+                <ul class="header__menu-list">
+                    <li class="header__menu-item">
+                        <a href="/" class="header__menu-link is-active">Link</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="/" class="header__menu-link">Link</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="/" class="header__menu-link">Link</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <button class="header__burger burger visible-mobile"
+                type="button"
+                aria-label="Open menu"
+                title="Open menu"
+                data-js-header-burger
+        >
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+        </button>
+
+
+    </div>
+</header>
+
+
+<!--MAIN-->
+<main class="main">
+    <!-- Аккордион 1 -->
+    <div data-js-accordion>
+        <div data-js-accordion-item>
+            <button data-js-accordion-trigger>Секция 1</button>
+            <div data-js-accordion-content>
+                <p>Содержимое первой секции.</p>
+            </div>
+        </div>
+
+        <div data-js-accordion-item>
+            <button data-js-accordion-trigger>Секция 2</button>
+            <div data-js-accordion-content>
+                <p>Содержимое второй секции.</p>
+            </div>
+        </div>
+
+        <div data-js-accordion-item>
+            <button data-js-accordion-trigger>Секция 3</button>
+            <div data-js-accordion-content>
+                <p>Содержимое третьей секции.</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!--FOOTER-->
+<footer class="footer"></footer>
+
+<!--MODAL-->
+<div class="modal"></div>
+
+<p class="text">создаем оригинальные маршруты и эксклюзивные впечатления</p>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
