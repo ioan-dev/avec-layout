@@ -1,0 +1,11 @@
+@use "../abstracts" as *;
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 10px;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

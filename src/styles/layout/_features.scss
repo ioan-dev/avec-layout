@@ -1,0 +1,139 @@
+@use "../abstracts" as *;
+
+.features {
+  padding-top: var(--spacing-xl);
+
+  position: relative;
+
+  @include tablet {
+    padding-top: 60px;
+  }
+
+  .section-label {
+    color: var(--color-gray);
+    margin-bottom: var(--spacing-m);
+
+    @include tablet {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__header {
+    grid-column: span 5;
+    align-self: start;
+
+    display: flex;
+    flex-direction: column;
+
+    position: sticky;
+    top: var(--spacing-xl);
+
+
+    @include tablet {
+      position: static;
+      margin-bottom: 48px;
+      grid-column: span 2;
+    }
+  }
+
+  &__title {
+    margin-bottom: var(--spacing-s);
+    color: var(--color-accent);
+    font-size: 3.385vw;
+
+    @include tablet {
+      font-size: 32px;
+      margin-bottom: 24px;
+    }
+  }
+
+
+  &__body {
+    grid-column: span 7;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    @include tablet {
+      grid-column: span 2;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    aspect-ratio: 999 / 400;
+
+    background-color: var(--color-beige);
+    padding: 40px;
+
+    border-radius: var(--border-radius-l);
+    overflow: hidden;
+
+    @include tablet {
+      aspect-ratio: 368 / 175;
+    }
+
+    @include mobile {
+      aspect-ratio: 343 / 450;
+    }
+
+    &--accent {
+      background-image: url('src/assets/images/features-bg-card.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      @include mobile {
+        background-image: url('src/assets/images/features-bg-card-mobile.jpg');
+      }
+
+      .features__item-title {
+        color: var(--color-light);
+      }
+
+      .features__item-description {
+        color: var(--color-light);
+      }
+    }
+  }
+
+  &__item-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__item-icon {
+    position: relative;
+    z-index: 1;
+
+    @include square(60px);
+  }
+
+  &__item-content {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    max-width: 70%;
+
+    @include tablet {
+      max-width: 100%;
+    }
+  }
+
+  &__item-title {
+    font-family: var(--font-primary);
+    color: var(--color-accent);
+  }
+
+
+}

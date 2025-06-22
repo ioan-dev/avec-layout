@@ -1,16 +1,17 @@
 @use "../abstracts" as *;
 
 .burger {
-  --_height: 2px;
+  --_height: 1px;
   --_center: calc(50% - var(--_height) / 2);
-  --_padding-x: 4px;
+  --_padding-x: 0px;
   --_padding-y: 4px;
 
-  @include square(34px);
+  @include square(24px);
   position: relative;
   padding: var(--_padding-y) var(--_padding-x);
-  color: red;
+  color: var(--color-light);
   border: none;
+  background-color: transparent;
 
   &__line {
     position: absolute;
@@ -26,7 +27,8 @@
 
     &:nth-child(2) {
       top: var(--_center);
-      left: var(--_padding-x);
+      right: var(--_padding-x);
+      width: calc(75% - var(--_padding-x) * 2);
     }
 
     &:nth-child(3) {
@@ -36,6 +38,8 @@
   }
 
   &.is-active {
+    color: var(--color-gray-dark);
+
     .burger__line {
 
       &:nth-child(1) {

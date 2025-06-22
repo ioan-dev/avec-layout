@@ -1,0 +1,98 @@
+@use "../abstracts" as *;
+
+.form {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__wrapper {
+    display: flex;
+    column-gap: 16px;
+
+    @include tablet {
+      width: 100%;
+      row-gap: 16px;
+      flex-direction: column;
+    }
+  }
+
+  &__input {
+    padding-block: 16px;
+    padding-inline: 24px;
+    border: none;
+    border-radius: var(--border-radius-l);
+
+    min-width: 321px;
+
+    &::placeholder {
+      color: inherit;
+      font-size: inherit;
+    }
+  }
+
+  &__btn {
+    min-width: 328px;
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    color: var(--color-light);
+
+
+    a {
+      text-decoration: underline;
+
+      @include hover {
+        text-decoration: none;
+      }
+    }
+
+    input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+  }
+
+  &__checkbox-custom {
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--color-light);
+    border-radius: 0;
+    //margin-top: 2px;
+    flex-shrink: 0;
+    position: relative;
+    transition: all 0.2s ease;
+  }
+
+  &__checkbox-text {
+    font-size: 15px;
+
+    @include tablet {
+      font-size: 13px;
+    }
+  }
+
+}
+
+
+.form__checkbox input:checked + .form__checkbox-custom::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 8px;
+  width: 6px;
+  height: 16px;
+  border: solid var(--color-light);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+

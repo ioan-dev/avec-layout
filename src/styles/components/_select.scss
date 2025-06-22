@@ -1,0 +1,20 @@
+@use "../abstracts" as *;
+
+.select {
+  background-color: var(--color-beige);
+  padding-block: 16px;
+  padding-inline: 24px;
+  border: none;
+  border-radius: var(--border-radius-l);
+
+  /* Убираем стандартную стрелку в некоторых браузерах */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: url("src/assets/icons/select-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: right 24px center;
+  background-size: 24px;
+  cursor: pointer;
+}

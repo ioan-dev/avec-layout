@@ -3,12 +3,12 @@
 html {
   font-size: calc(0.625rem + $vw-1920);
 
-  @include laptop {
-    font-size: calc(0.625rem + $vw-1440);
-  }
+  //@include laptop {
+  //  font-size: calc(0.625rem + $vw-1440);
+  //}
 
   @include tablet {
-    font-size: calc(0.625rem + $vw-1024);
+    font-size: calc(0.625rem + $vw-768);
   }
 
   @include mobile {
@@ -17,7 +17,47 @@ html {
 }
 
 body {
-  font-size: 32px;
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: var(--line-height-l);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include tablet {
+    font-size: 16px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+h1, h2 {
+  font-size: 65px;
+  text-transform: uppercase;
+  line-height: var(--line-height-m);
+
+  @include tablet {
+    font-size: 32px;
+  }
+
+}
+
+h3 {
+  font-family: var(--font-primary);
+  font-size: 30px;
+  letter-spacing: var(--letter-spacing-m);
+  font-weight: 400;
+
+  @include tablet {
+    font-size: 24px;
+  }
 }
 
 a {

@@ -1,0 +1,133 @@
+@use "../abstracts" as *;
+
+.feedback {
+  padding-top: 186px;
+  padding-bottom: 248px;
+  background-image: url('src/assets/images/back.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include tablet {
+    padding-top: 60px;
+    padding-bottom: 102px;
+  }
+
+  &__body {
+    grid-column: 2 / span 10;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
+    background: rgba(242, 239, 235, 0.02);
+    border-radius: var(--border-radius-l);
+    padding-bottom: 65px;
+
+    @include tablet {
+      padding-top: 60px;
+      padding-bottom: 62px;
+      padding-inline: 16px;
+      grid-column: span 2;
+    }
+  }
+
+  &__title {
+    color: var(--color-accent);
+    max-width: 540px;
+    text-align: center;
+    margin-bottom: var(--spacing-s);
+
+    @include tablet {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: var(--spacing-m);
+    color: var(--color-gray-dark);
+    max-width: 570px;
+    text-align: center;
+
+    @include tablet {
+      margin-bottom: 36px;
+    }
+  }
+
+  &__form {
+    margin-bottom: var(--spacing-s);
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__message {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__message-text {
+    color: var(--color-light);
+    text-align: center;
+
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+
+  &__social {
+    display: flex;
+    column-gap: 16px;
+
+  }
+
+  &__social-item {
+    flex-shrink: 0;
+
+    @include tablet {
+      flex-grow: 1;
+    }
+  }
+
+  &__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 12px;
+    padding-inline: 24px;
+    padding-block: 16px;
+    //width: 100%;
+    min-width: 187px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    @include tablet {
+      width: 100%;
+    }
+
+    @include mobile {
+      padding-inline: 11px;
+      min-width: 147px;
+    }
+  }
+
+  &__social-text {
+    font-size: 18px;
+    color: var(--color-light);
+
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+
+}

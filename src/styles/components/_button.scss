@@ -4,22 +4,35 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-sm);
+  //gap: var(--space-sm);
 
-  padding: var(--space-sm) var(--space-lg);
+  padding-block: 12px;
+  padding-inline: 24px;
+
   border: 1px solid transparent;
-  border-radius: var(--border-radius-md);
+  border-radius: var(--border-radius-m);
   font-family: inherit;
-  font-size: var(--font-size-base);
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 400;
   text-align: center;
   text-decoration: none;
   white-space: nowrap;
 
+  background-color: var(--color-accent);
+  color: var(--color-light);
+
   cursor: pointer;
   user-select: none;
-  transition: var(--transition-fast);
+  transition: var(--transition-duration);
 
+  @include tablet {
+    font-size: 16px;
+    padding-block: 16px;
+  }
+
+  @include hover {
+    background-color: var(--color-accent-dark);
+  }
 
   &:disabled {
     opacity: 0.6;
@@ -28,7 +41,7 @@
 
   // Variants
   &--primary {
-    background-color: var(--color-primary);
+    background-color: var(--color-accent);
     color: white;
 
     @include hover {

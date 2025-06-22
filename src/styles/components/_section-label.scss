@@ -1,0 +1,6 @@
+@use "../abstracts" as *;
+
+.section-label {
+  font-family: var(--font-tertiary);
+  color: var(--color-gray-dark);
+}

@@ -1,22 +1,37 @@
 @use "../abstracts" as *;
 
 .header {
+  padding-block: 12px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid rgba(217, 217, 217, 0.2);
+  z-index: 100;
+
+  @include tablet {
+    padding-block: 16px;
+  }
 
   &__inner {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   &__overlay {
     @include mobile-above {
-      display: contents;
+      display: none;
     }
 
-    @include mobile {
+    @include tablet {
+      display: block;
       position: fixed;
       inset: 0;
-      padding: 16px;
-      background-color: darkcyan;
+      padding-top: 56px;
+      padding-inline: 36px;
+      padding-right: 10px;
+      background-color: var(--color-beige);
       transition-duration: var(--transition-duration);
 
       &:not(.is-active) {
@@ -24,19 +39,216 @@
 
         translate: 100%;
       }
+
+      .header__menu-list {
+        flex-direction: column;
+        row-gap: 16px;
+      }
+
+      .header__link {
+        font-size: 20px;
+        color: var(--color-dark);
+      }
     }
   }
+
 
   &__menu-list {
     display: flex;
+    column-gap: 65px;
+    color: var(--color-light);
+  }
+
+  &__link {
+
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--color-light);
+
+    @include hover {
+      color: var(--color-link-hover);
+    }
+
+    //&.is-active {
+    //  opacity: 0.5;
+    //  pointer-events: none;
+    //}
+  }
+
+  &__socials {
+    display: flex;
+    column-gap: 16px;
+
+    @include tablet {
+      column-gap: 12px;
+    }
+  }
+
+  &__social-link {
+    flex-shrink: 0;
+  }
+
+  &__icon {
+    @include tablet {
+      @include square(24px);
+    }
+  }
+
+  &--light {
+    background-color: var(--color-light);
+
+    .logo {
+      color: var(--color-accent);
+    }
+
+    .header__link {
+      color: var(--color-gray-dark);
+    }
+
+    .icon--tg {
+      .bg {
+        color: var(--color-gray-dark);
+      }
+
+      .symbol {
+        color: var(--color-light);
+      }
+    }
+
+    .icon--wt {
+      .bg {
+        color: var(--color-gray-dark);
+      }
+
+      .bg-symbol {
+        color: var(--color-light);
+      }
+
+      .symbol {
+        color: var(--color-gray-dark);
+      }
+    }
+
+    .burger {
+      color: var(--color-gray-dark);
+    }
+
+  }
+
+  &.is-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    width: 100%;
+    transition: all 0.3s ease;
+    border: none;
+  }
+
+  //  BURGER MENU
+
+  &__burger-menu {
+
+    margin-bottom: 56px;
+
+    &-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 32px;
+      text-transform: uppercase;
+
+      @include tablet {
+        font-size: 16px;
+
+        margin-bottom: 32px;
+      }
+    }
+
+    .header__link {
+      font-size: 20px;
+      text-transform: none;
+    }
+
+    .header__list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+    }
+
+
+  }
+
+  &__contacts {
+    &-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 26px;
+      text-transform: uppercase;
+
+      @include tablet {
+        font-size: 16px;
+
+        margin-bottom: 32px;
+      }
+    }
+
+    .header__list--contacts {
+      display: flex;
+      flex-direction: column;
+      row-gap: 8px;
+      margin-bottom: 56px;
+    }
+
+    .header__link {
+      font-size: 22px;
+    }
+  }
+
+  .header__list--socials {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+  }
+
+  .header__link--socials {
+    display: flex;
+    align-items: center;
     column-gap: 20px;
   }
 
-  &__menu-link {
+  &__socials-text {
+    font-size: 18px;
+  }
 
-    &.is-active {
-      color: tomato;
-      pointer-events: none;
+  .icon {
+
+    &--tg {
+      .bg {
+        color: var(--color-gray-dark);
+      }
+
+      .symbol {
+        color: var(--color-light);
+      }
+    }
+
+    &--wt {
+      .bg {
+        color: var(--color-gray-dark);
+      }
+
+      .bg-symbol {
+        color: var(--color-light);
+      }
+
+      .symbol {
+        color: var(--color-gray-dark);
+      }
     }
   }
+
+
 }

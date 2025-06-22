@@ -1,0 +1,110 @@
+@use "../abstracts" as *;
+
+.services {
+  padding-top: var(--spacing-xl);
+  padding-bottom: 250px;
+
+  background-image: url('src/assets/images/services-bg-desktop.jpg');
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: var(--color-gray-dark);
+
+  border-radius: var(--border-radius-l);
+
+  @include tablet {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+
+  .section-label {
+    color: var(--color-light);
+  }
+
+  &__title-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-m);
+    margin-bottom: 322px;
+
+    @include tablet {
+      row-gap: 24px;
+      margin-bottom: 224px;
+    }
+  }
+
+  &__title {
+    color: var(--color-light);
+    max-width: 960px;
+
+    @include tablet {
+      max-width: 345px;
+    }
+  }
+
+  &__grid {
+    row-gap: 10px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 20px;
+    background-color: var(--color-light);
+    border-radius: var(--border-radius-l);
+    padding: 40px;
+    grid-column: span 3;
+    aspect-ratio: 211 / 215;
+
+    @include tablet {
+      grid-column: span 2;
+      padding: 32px;
+      width: 100%;
+      min-height: 360px;
+      aspect-ratio: auto;
+    }
+
+    @include mobile {
+      width: 100%;
+      min-height: 360px;
+
+    }
+
+    &:nth-child(2) {
+      grid-column: 10 / span 3;
+
+      @include tablet {
+        grid-column: span 2;
+      }
+    }
+
+    &--accent {
+      grid-column: span 6;
+      background-color: var(--color-accent);
+      aspect-ratio: 853 / 430;
+
+      @include tablet {
+        grid-column: span 2;
+        aspect-ratio: auto;
+      }
+
+      .services__item-title {
+        color: var(--color-light);
+      }
+
+      .services__item-description {
+        color: var(--color-light);
+      }
+    }
+  }
+
+  &__item-title {
+    font-family: var(--font-primary);
+    color: var(--color-accent);
+  }
+
+
+}

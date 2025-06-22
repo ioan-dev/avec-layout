@@ -1,0 +1,144 @@
+@use "../abstracts" as *;
+
+.villa-info {
+  padding-top: 140px;
+
+  @include tablet {
+    padding-top: 60px;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__divider {
+    display: flex;
+    column-gap: 32px;
+    justify-content: space-between;
+    align-items: center;
+    //margin-inline: auto;
+    width: 100%;
+    max-width: 1180px;
+
+    margin-bottom: 90px;
+
+    @include tablet {
+      column-gap: 12px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__divider-line {
+    height: 1px;
+    width: 100%;
+    background-color: #E4DFD9;
+  }
+
+  &__about {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    text-align: center;
+    margin-bottom: 120px;
+    max-width: 860px;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    @include tablet {
+      font-size: 18px;
+      text-align: left;
+      margin-bottom: 80px;
+    }
+
+
+  }
+
+  &__features {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    column-gap: 16px;
+    max-width: 1142px;
+
+    margin-bottom: 120px;
+
+    @include tablet {
+      gap: 64px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__features-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 32px;
+    flex-shrink: 0;
+
+  }
+
+  &__features-icon {
+    @include square(124px);
+
+    @include tablet {
+      @include square(100px);
+    }
+  }
+
+  &__features-text {
+    text-align: center;
+
+    @include tablet {
+      max-width: 100px;
+      text-align: left;
+    }
+  }
+
+  &__lists-wrapper {
+    display: flex;
+    column-gap: 24px;
+    justify-content: center;
+    padding-block: 112px;
+    padding-inline: 100px;
+    background-color: var(--color-beige);
+    border-radius: var(--border-radius-l);
+    border: 1px solid #E4DFD9;
+    margin-bottom: 207px;
+
+    @include laptop {
+      padding-inline: 16px;
+    }
+
+    @include tablet {
+      flex-direction: column;
+      row-gap: 48px;
+      //padding-inline: 16px;
+      padding-block: 60px;
+      margin-bottom: 80px;
+    }
+  }
+
+  &__list {
+    flex-basis: 420px;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    list-style: inside;
+
+    @include tablet {
+      flex-basis: auto;
+    }
+  }
+
+  &__item {
+
+  }
+
+
+}

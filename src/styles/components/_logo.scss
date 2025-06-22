@@ -1,4 +1,12 @@
 @use "../abstracts" as *;
 
 .logo {
+  color: var(--color-light);
+  width: 203px;
+  height: 57px;
+
+  @include tablet {
+    width: 112px;
+    height: 24px;
+  }
 }

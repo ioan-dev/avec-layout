@@ -1,4 +1,33 @@
 @use "../abstracts" as *;
 
 .icon {
+  width: 36px;
+  height: 36px;
+
+  &--tg {
+
+    .bg {
+      color: var(--color-light);
+    }
+
+    .symbol {
+      color: var(--color-gray-dark);
+    }
+
+  }
+
+  &--wt {
+
+    .symbol {
+      color: var(--color-light);
+    }
+
+    .bg-symbol {
+      color: var(--color-gray-dark);
+    }
+
+    .bg {
+      color: var(--color-light);
+    }
+  }
 }

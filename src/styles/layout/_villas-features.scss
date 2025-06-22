@@ -1,0 +1,53 @@
+@use "../abstracts" as *;
+
+.villas-features {
+  padding-top: var(--spacing-xl);
+
+  @include tablet {
+    padding-top: 0;
+  }
+
+  &__inner {
+    display: flex;
+    column-gap: 24px;
+    justify-content: center;
+    padding-block: 112px;
+    padding-inline: 100px;
+    background-color: var(--color-beige);
+    border-radius: var(--border-radius-l);
+    border: 1px solid #E4DFD9;
+
+    @include laptop {
+      padding-inline: 16px;
+    }
+
+    @include tablet {
+      flex-direction: column;
+      row-gap: 36px;
+      //padding-inline: 16px;
+      padding-block: 60px;
+    }
+  }
+
+  &__body {
+    padding-inline: 0;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 31px;
+    flex-basis: 340px;
+
+    @include tablet {
+      flex-basis: auto;
+      row-gap: 16px;
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    font-family: var(--font-primary);
+    color: var(--color-accent);
+  }
+}

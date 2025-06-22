@@ -1,15 +1,27 @@
+@use "../abstracts" as *;
+
 :root {
   // TYPOGRAPHY
-  --font-primary: 'Montserrat', sans-serif;
+  --font-primary: 'Manrope', sans-serif;
+  --font-secondary: 'Vremena', serif;
+  --font-tertiary: 'Inter', sans-serif;
+
 
   // Container size
-  --container-width: 1400px;
+  --container-width: 1720px;
   --container-padding-x: 20px;
 
   // Section
   // Вертикальный padding для секций который нужно разделить на 2
   // 160 / 2 = 80px
   --section-padding-y: 80px;
+
+  // Spacing
+  --spacing-xs: 32px;
+  --spacing-s: 36px;
+  --spacing-m: 48px;
+  --spacing-l: 80px;
+  --spacing-xl: 192px;
 
   // Viewport units fix
   --100vw: 100vw;
@@ -18,5 +30,39 @@
   // Transition
   --transition-duration: 0.2s;
   --transition-duration-longer: 0.4s;
+
+  // Color
+  --color-accent: #A21D22;
+  --color-accent-dark: #6E0509;
+
+  --color-light: #FFFFFF;
+  --color-dark: #000000;
+  --color-dark-alt-light: #313131;
+  --color-dark-alt: #272727;
+  --color-beige: #F2EFEB;
+  --color-beige-bg: #F9F7F3;
+  --color-gray: #A7A7A7;
+  --color-gray-dark: #1B1B1B;
+  --color-link-hover: #8C8C8C;
+
+  //  Border radius
+  --border-radius-s: 2px;
+  --border-radius-m: 3px;
+  --border-radius-l: 4px;
+
+  // Letter spacing
+  --letter-spacing-m: -0.02em;
+
+  // Line height
+  --line-height-s: 100%;
+  --line-height-m: 125%;
+  --line-height-l: 145%;
+
+
+  @include tablet {
+    --container-padding-x: 16px;
+    //--spacing-xl: 60px;
+  }
+
 }
 
